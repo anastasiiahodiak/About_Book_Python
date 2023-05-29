@@ -26,6 +26,10 @@ class Book(ABC):
         self.publisher = publisher
         self.year = year
         self.genre = genre
+        self._the_best_readers = set()
+
+    def __iter__(self):
+        return iter(self._the_best_readers)
 
     @abstractmethod
     def get_pages_count(self):
